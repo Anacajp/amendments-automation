@@ -1,8 +1,10 @@
+
 # Automação de Emendas Parlamentares
 
 Este projeto automatiza o processo de download, atualização e integração de planilhas de emendas parlamentares, facilitando a gestão e atualização de dados em Google Sheets de forma eficiente e rastreável.
 
 ## Funcionalidades
+
 - Download automático de arquivos de emendas de fontes especificadas
 - Atualização de planilhas Google Sheets com os dados baixados
 - Exposição de endpoints HTTP para health check e execução da automação
@@ -10,6 +12,7 @@ Este projeto automatiza o processo de download, atualização e integração de 
 - Logging detalhado para rastreabilidade
 
 ## Estrutura do Projeto
+
 ```
 ├── config/                # Configurações e credenciais
 ├── download/              # Planilhas baixadas
@@ -28,39 +31,45 @@ Este projeto automatiza o processo de download, atualização e integração de 
 ## Como Usar
 
 ### 1. Pré-requisitos
+
 - Python 3.12+
 - Docker (opcional, para execução em container)
 - Credenciais do Google (coloque o arquivo `google_credentials.json` em `config/`)
 
 ### 2. Instalação
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 3. Execução Local
+
 ```bash
 python src/main.py
 ```
 
 ### 4. Executando via Docker
+
 ```bash
 docker build -t amendments-automation .
 docker run --env-file .env.example -v $(pwd)/config:/app/config amendments-automation
 ```
 
 ### 5. Endpoints HTTP
+
 - `GET /health` — Verifica se o serviço está online
 - `POST /run` — Executa o processo de automação
 
-
 ## ⚠️ Alerta de Segurança
+
 **Nunca compartilhe, envie para repositórios públicos ou version control arquivos de credenciais como `config/google_credentials.json`, `.env` ou qualquer arquivo contendo chaves, senhas ou tokens.**
 
 Esses arquivos devem ser mantidos apenas no ambiente local e protegidos. Caso alguma credencial tenha sido exposta, revogue e gere uma nova imediatamente.
 
 ## Variáveis de Ambiente
+
 Configure as variáveis necessárias no arquivo `.env.example` e renomeie para `.env` conforme necessário.
 
 ## Contribuição
-Pull requests são bem-vindos! Para grandes mudanças, abra uma issue primeiro para discutir o que você gostaria de modificar.
 
+Pull requests são bem-vindos! Para grandes mudanças, abra uma issue primeiro para discutir o que você gostaria de modificar.
