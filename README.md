@@ -52,12 +52,15 @@ docker run --env-file .env.example -v $(pwd)/config:/app/config amendments-autom
 - `GET /health` — Verifica se o serviço está online
 - `POST /run` — Executa o processo de automação
 
+
+## ⚠️ Alerta de Segurança
+**Nunca compartilhe, envie para repositórios públicos ou version control arquivos de credenciais como `config/google_credentials.json`, `.env` ou qualquer arquivo contendo chaves, senhas ou tokens.**
+
+Esses arquivos devem ser mantidos apenas no ambiente local e protegidos. Caso alguma credencial tenha sido exposta, revogue e gere uma nova imediatamente.
+
 ## Variáveis de Ambiente
 Configure as variáveis necessárias no arquivo `.env.example` e renomeie para `.env` conforme necessário.
 
 ## Contribuição
 Pull requests são bem-vindos! Para grandes mudanças, abra uma issue primeiro para discutir o que você gostaria de modificar.
 
----
-
-> Desenvolvido por Ana Carolina Pacheco.
